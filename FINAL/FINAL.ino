@@ -19,7 +19,7 @@ void setup() {
   
   pinMode(Trig, OUTPUT);
   pinMode(Echo, INPUT);
-//
+
 //  digitalWrite(B1A, LOW);
 //  digitalWrite(B1B, LOW);
 //  
@@ -44,7 +44,6 @@ void loop() {
   int range = trueRange();
   float edge = 5.0;
   forwards();
-//  Serial.println(edge);
   
   while (edge > maxEdge){       // if ring is not detected
   
@@ -83,13 +82,11 @@ void loop() {
     Serial.println("Edge detected");
     Serial.println(edge);
     reverse();
-    delay(1500);
+    delay(1200);
     spin();
     delay(2800);
     no();
   }
-
-//  if (edge < maxEdge && range <= maxRange) forwards();
   
 }
 
@@ -121,7 +118,6 @@ int trueEdge() { // finds mode range from sensor
   while (goodEdge < 8){
 
     edge = findEdge();
-//    Serial.println(edge);
     goodEdge = 0;
     float upper = edge + 5.0;
     float lower = edge - 5.0;
